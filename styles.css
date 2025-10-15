@@ -674,3 +674,187 @@ body {
     }
 }
 
+/* Terminal Loading Screen Styles */
+.terminal-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.terminal-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.terminal-window {
+    width: 90%;
+    max-width: 800px;
+    height: 500px;
+    background: #0c0c0c;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.terminal-header {
+    background: linear-gradient(to bottom, #3c3c3c 0%, #2d2d30 100%);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.terminal-button.close {
+    background: #ff5f56;
+}
+
+.terminal-button.minimize {
+    background: #ffbd2e;
+}
+
+.terminal-button.maximize {
+    background: #27ca3f;
+}
+
+.terminal-title {
+    color: #fff;
+    font-size: 12px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.terminal-body {
+    height: calc(100% - 30px);
+    background: #0c0c0c;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.terminal-content {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.terminal-prompt {
+    color: #00ff00;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.terminal-command {
+    color: #fff;
+}
+
+.terminal-cursor {
+    color: #00ff00;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.terminal-output {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.terminal-output .success {
+    color: #00ff00;
+}
+
+.terminal-output .error {
+    color: #ff4444;
+}
+
+.terminal-output .info {
+    color: #00aaff;
+}
+
+.terminal-output .warning {
+    color: #ffaa00;
+}
+
+.terminal-continue {
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease 3s forwards;
+}
+
+.terminal-continue p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.terminal-continue kbd {
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide main content initially */
+body.loading .navbar,
+body.loading .section {
+    display: none;
+}
+
+/* Show main content after loading */
+body.loaded .terminal-loader {
+    display: none;
+}
+
+body.loaded .navbar,
+body.loaded .section {
+    display: block;
+}
+
