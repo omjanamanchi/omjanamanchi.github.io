@@ -435,16 +435,37 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.research-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .research-title {
     font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.research-organization {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 .research-description {
+    list-style-position: inside;
     color: var(--text-secondary);
     margin: 1rem 0;
     line-height: 1.6;
+}
+
+.research-description li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
 }
 
 .report-link {
@@ -535,6 +556,8 @@ body {
     overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
 }
 
 .hobby-card:hover {
@@ -546,18 +569,20 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 .hobby-title {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    padding: 1rem 1.5rem 0.5rem;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .hobby-description {
     color: var(--text-secondary);
-    padding: 0 1.5rem 1.5rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 /* Responsive Design */
@@ -623,3 +648,4 @@ body {
         height: 24px;
     }
 }
+

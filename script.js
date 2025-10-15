@@ -80,3 +80,4 @@ document.querySelectorAll('.course-card, .experience-card, .project-card, .resea
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
