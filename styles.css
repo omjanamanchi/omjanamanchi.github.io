@@ -1,26 +1,38 @@
 :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --text-primary: #1a1a1a;
-    --text-secondary: #666666;
-    --accent-color: #007bff;
-    --accent-hover: #0056b3;
-    --card-bg: #ffffff;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-color: #e0e0e0;
+    /* Spiritual color palette inspired by the Om landscape */
+    --bg-primary: #f0f4ff; /* spiritual-sky-50 */
+    --bg-secondary: #f6f5f3; /* spiritual-mountain-50 */
+    --text-primary: #1e1a42; /* spiritual-sky-950 */
+    --text-secondary: #4d4036; /* spiritual-mountain-900 */
+    --accent-color: #f97316; /* spiritual-glow-500 */
+    --accent-hover: #ea580c; /* spiritual-glow-600 */
+    --card-bg: #f0f4ff; /* spiritual-sky-50 */
+    --card-shadow: 0 4px 6px rgba(30, 26, 66, 0.1);
+    --border-color: #c7d7fe; /* spiritual-sky-200 */
     --transition: all 0.3s ease;
+    
+    /* Spiritual glow effects */
+    --spiritual-glow: 0 0 20px rgba(124, 124, 242, 0.3), 0 0 40px rgba(124, 124, 242, 0.2);
+    --golden-glow: 0 0 20px rgba(249, 115, 22, 0.4), 0 0 40px rgba(249, 115, 22, 0.3);
+    --deep-glow: 0 0 30px rgba(30, 26, 66, 0.5), 0 0 60px rgba(30, 26, 66, 0.3);
 }
 
 [data-theme="dark"] {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --text-primary: #ffffff;
-    --text-secondary: #ffffff;
-    --accent-color: #4a9eff;
-    --accent-hover: #66b0ff;
-    --card-bg: #000000;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --border-color: #404040;
+    /* Dark spiritual theme - deep night sky with golden glow */
+    --bg-primary: #1e1a42; /* spiritual-sky-950 */
+    --bg-secondary: #2a221e; /* spiritual-mountain-950 */
+    --text-primary: #f0f4ff; /* spiritual-sky-50 */
+    --text-secondary: #d4cbb8; /* spiritual-earth-300 */
+    --accent-color: #fb923c; /* spiritual-glow-400 */
+    --accent-hover: #fdba74; /* spiritual-glow-300 */
+    --card-bg: #1e1a42; /* spiritual-sky-950 */
+    --card-shadow: 0 4px 6px rgba(30, 26, 66, 0.5);
+    --border-color: #4a3ab0; /* spiritual-sky-800 */
+    
+    /* Enhanced glow effects for dark mode */
+    --spiritual-glow: 0 0 30px rgba(124, 124, 242, 0.5), 0 0 60px rgba(124, 124, 242, 0.3);
+    --golden-glow: 0 0 30px rgba(249, 115, 22, 0.6), 0 0 60px rgba(249, 115, 22, 0.4);
+    --deep-glow: 0 0 40px rgba(30, 26, 66, 0.7), 0 0 80px rgba(30, 26, 66, 0.5);
 }
 
 * {
@@ -165,6 +177,19 @@ body {
 /* Home Section */
 .home-section {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(124, 124, 242, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .home-content {
@@ -213,7 +238,7 @@ body {
 
 .social-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: var(--golden-glow);
     background-color: var(--accent-color);
     color: white;
 }
