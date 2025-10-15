@@ -698,8 +698,8 @@ body {
 
 .terminal-window {
     width: 90%;
-    max-width: 800px;
-    height: 500px;
+    max-width: 1000px;
+    height: 600px;
     background: #0c0c0c;
     border-radius: 8px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -858,3 +858,415 @@ body.loaded .section {
     display: block;
 }
 
+/* MacOS Desktop Styles */
+.macos-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        #ff9a9e 0%, 
+        #fecfef 25%, 
+        #ff6b6b 40%, 
+        #4ecdc4 60%, 
+        #45b7d1 80%, 
+        #96ceb4 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* MacOS Top Bar */
+.macos-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 400;
+    z-index: 10000;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.macos-center-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.macos-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.macos-control-icon {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+.macos-control-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.macos-time {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.macos-battery {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* MacOS Desktop Content */
+.macos-desktop-content {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* MacOS Folders */
+.macos-folders {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.macos-folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    user-select: none;
+    position: relative;
+}
+
+.macos-folder:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.macos-folder:active {
+    transform: scale(0.95);
+}
+
+.macos-folder.selected {
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+.macos-folder-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    transition: all 0.2s ease;
+}
+
+.macos-folder-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.macos-folder:hover .macos-folder-icon {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    transform: scale(1.05);
+}
+
+.macos-folder-name {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.4);
+    max-width: 80px;
+    word-wrap: break-word;
+}
+
+/* MacOS Dock */
+.macos-dock {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.macos-dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    min-width: 50px;
+}
+
+.macos-dock-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-6px) scale(1.05);
+}
+
+.macos-dock-item:active {
+    transform: scale(0.95);
+}
+
+.macos-dock-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 2px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.macos-dock-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.macos-dock-label {
+    font-size: 9px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design for MacOS Desktop */
+@media (max-width: 768px) {
+    .macos-folders {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+    }
+    
+    .macos-folder-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .macos-folder-name {
+        font-size: 11px;
+    }
+    
+    .macos-dock {
+        bottom: 10px;
+        padding: 8px 15px;
+        gap: 10px;
+    }
+    
+    .macos-dock-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .macos-dock-label {
+        font-size: 9px;
+    }
+    
+    .macos-desktop-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .macos-folders {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .macos-folder-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .macos-dock {
+        gap: 8px;
+        padding: 6px 12px;
+    }
+    
+    .macos-dock-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Content Window Styles */
+.content-window-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    backdrop-filter: blur(5px);
+}
+
+.content-window {
+    width: 90%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 700px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+    animation: windowSlideIn 0.3s ease-out;
+}
+
+@keyframes windowSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.content-window-header {
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-bottom: 1px solid #dee2e6;
+    user-select: none;
+}
+
+.content-window-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.content-window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.content-window-controls button {
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.content-window-minimize {
+    background: #ffbd2e;
+    color: #000;
+}
+
+.content-window-maximize {
+    background: #27ca3f;
+    color: #000;
+}
+
+.content-window-close {
+    background: #ff5f56;
+    color: #000;
+}
+
+.content-window-controls button:hover {
+    transform: scale(1.1);
+}
+
+.content-window-body {
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    background: #ffffff;
+}
+
+.content-window-content {
+    padding: 20px;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Content Window Responsive */
+@media (max-width: 768px) {
+    .content-window {
+        width: 95%;
+        height: 85%;
+    }
+    
+    .content-window-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-window {
+        width: 98%;
+        height: 90%;
+    }
+    
+    .content-window-content {
+        padding: 10px;
+    }
+    
+    .content-window-title {
+        font-size: 12px;
+    }
+}
