@@ -52,19 +52,13 @@ class TerminalLoader {
     }
     
     async startTyping() {
-        // First command (git clone) - slower typing
-        await this.typeCommand(this.commands[0], 100);
-        await this.delay(500);
-        await this.showOutput();
-        await this.delay(1000);
-        this.clearCommand();
-        
-        // Remaining commands - much faster
-        for (let i = 1; i < this.commands.length; i++) {
-            await this.typeCommand(this.commands[i], 20);
-            await this.delay(100);
+        // Much faster typing for all commands
+        for (let i = 0; i < this.commands.length; i++) {
+            await this.typeCommand(this.commands[i], 15); // Very fast typing
+            await this.delay(50); // Minimal delay
             await this.showOutput();
-            await this.delay(200);
+            await this.delay(100); // Minimal delay between commands
+            this.addCommandToHistory(this.commands[i]);
             this.clearCommand();
         }
         
@@ -95,7 +89,7 @@ class TerminalLoader {
     async showOutput() {
         const outputElement = document.getElementById('terminal-output');
         
-        // Show outputs for current command
+        // Show outputs for current command - much faster
         const startIndex = this.currentOutputIndex;
         const endIndex = Math.min(startIndex + 3, this.outputs.length);
         
@@ -117,14 +111,28 @@ class TerminalLoader {
                 }
                 
                 outputElement.appendChild(outputLine);
-                // Faster output display for scrollable effect
-                await this.delay(30);
+                // Much faster output display for better scrolling effect
+                await this.delay(10);
             }
         }
         
         this.currentOutputIndex = endIndex;
         
         // Auto-scroll to bottom for terminal effect
+        outputElement.scrollTop = outputElement.scrollHeight;
+    }
+    
+    addCommandToHistory(command) {
+        const outputElement = document.getElementById('terminal-output');
+        
+        // Add the command to history with proper formatting
+        const commandHistory = document.createElement('div');
+        commandHistory.className = 'command-history';
+        commandHistory.innerHTML = `<span class="terminal-prompt">PS C:\\Users\\omjan\\dev\\omjanamanchi.github.io></span> <span class="command-text">${command}</span>`;
+        
+        outputElement.appendChild(commandHistory);
+        
+        // Auto-scroll to show new command
         outputElement.scrollTop = outputElement.scrollHeight;
     }
     
@@ -347,7 +355,6 @@ function getSectionContent(section) {
                     </ul>
                 </div>
             </div>
-            <button onclick="viewFullPortfolio('education')" style="margin-top: 20px; padding: 10px 20px; background: #007AFF; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">View Full Portfolio</button>
         `,
         experience: `
             <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Experience</h2>
@@ -376,7 +383,6 @@ function getSectionContent(section) {
                 </ul>
             </div>
             <p style="color: #666; font-style: italic; margin-top: 20px;">And many more exciting experiences!</p>
-            <button onclick="viewFullPortfolio('experience')" style="margin-top: 15px; padding: 10px 20px; background: #007AFF; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">View Full Portfolio</button>
         `,
         projects: `
             <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Projects</h2>
@@ -415,7 +421,6 @@ function getSectionContent(section) {
                 </div>
             </div>
             <p style="color: #666; font-style: italic; margin-top: 20px;">And 10+ more projects!</p>
-            <button onclick="viewFullPortfolio('projects')" style="margin-top: 15px; padding: 10px 20px; background: #007AFF; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">View Full Portfolio</button>
         `,
         research: `
             <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Research</h2>
@@ -430,7 +435,6 @@ function getSectionContent(section) {
                     <li>Presented our NLP models on Tibetan texts at a virtual conference in Dharmshala with the Dalai Lama</li>
                 </ul>
                 <a href="https://dharmamitra.org/" target="_blank" style="display: inline-block; padding: 10px 20px; background: #007AFF; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">Visit Dharmamitra Project</a>
-                <button onclick="viewFullPortfolio('research')" style="margin-top: 15px; margin-left: 10px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">View Full Portfolio</button>
             </div>
         `,
         skills: `
@@ -478,7 +482,6 @@ function getSectionContent(section) {
                     </div>
                 </div>
             </div>
-            <button onclick="viewFullPortfolio('skills')" style="margin-top: 20px; padding: 10px 20px; background: #007AFF; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">View Full Portfolio</button>
         `,
         hobbies: `
             <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Hobbies</h2>
@@ -496,7 +499,6 @@ function getSectionContent(section) {
                     </p>
                 </div>
             </div>
-            <button onclick="viewFullPortfolio('hobbies')" style="margin-top: 20px; padding: 10px 20px; background: #007AFF; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">View Full Portfolio</button>
         `
     };
     
@@ -550,39 +552,6 @@ function setupContentWindowControls() {
     });
 }
 
-function viewFullPortfolio(section) {
-    // Close content window
-    const overlay = document.getElementById('content-window-overlay');
-    overlay.style.display = 'none';
-    
-                // Hide MacOS desktop
-                const macosDesktop = document.getElementById('macos-desktop');
-                if (macosDesktop) {
-                    macosDesktop.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    macosDesktop.style.opacity = '0';
-                    macosDesktop.style.transform = 'scale(0.95)';
-                    
-                    setTimeout(() => {
-                        macosDesktop.style.display = 'none';
-                        
-                        // Show regular website and navigate to section
-                        document.body.classList.remove('loading');
-                        document.body.classList.add('loaded');
-                        
-                        // Scroll to the section
-                        const targetElement = document.querySelector(`#${section}`);
-                        if (targetElement) {
-                            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                            const targetPosition = targetElement.offsetTop - navbarHeight;
-                            
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }, 500);
-                }
-}
 
 // Initialize MacOS Desktop functionality
 function initializeMacOSDesktop() {
