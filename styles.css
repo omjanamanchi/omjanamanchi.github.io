@@ -1058,7 +1058,12 @@ body.loaded .section {
 }
 
 .macos-folder.selected {
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: #36454F;
+    color: white;
+}
+
+.macos-folder.selected .macos-folder-name {
+    color: white;
 }
 
 .macos-folder-icon {
@@ -1275,11 +1280,11 @@ body.loaded .section {
     max-width: 1000px;
     height: 80%;
     max-height: 700px;
-    background: #f8f9fa;
+    background: #36454F;
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    border: 1px solid #dee2e6;
+    border: 1px solid #2a3a4f;
     animation: windowSlideIn 0.3s ease-out;
 }
 
@@ -1295,20 +1300,20 @@ body.loaded .section {
 }
 
 .content-window-header {
-    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(to bottom, #36454F 0%, #2a3a4f 100%);
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #2a3a4f;
     user-select: none;
 }
 
 .content-window-title {
     font-size: 14px;
     font-weight: 600;
-    color: #495057;
+    color: white;
     flex: 1;
     margin-left: 20px;
 }
@@ -1354,12 +1359,12 @@ body.loaded .section {
 .content-window-body {
     height: calc(100% - 40px);
     overflow-y: auto;
-    background: #ffffff;
+    background: #36454F;
 }
 
 .content-window-content {
     padding: 20px;
-    color: #495057;
+    color: white;
     line-height: 1.6;
 }
 

@@ -329,172 +329,170 @@ function openContentWindow(section) {
 function getSectionContent(section) {
     const sectionData = {
         education: `
-            <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Education</h2>
-            <p style="font-size: 16px; margin-bottom: 20px; color: #666;">
+            <h2 style="color: white; margin-bottom: 20px; font-size: 24px;">Education</h2>
+            <p style="font-size: 16px; margin-bottom: 20px; color: #e0e0e0;">
                 I'm a student at Purdue majoring in Computer Science with a Minor in Finance & Mathematics
             </p>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
                 <div>
-                    <h3 style="color: #007AFF; margin-bottom: 15px;">Computer Science Courses</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">CS 18000 - Problem Solving & Object-Oriented Programming</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">CS 18200 - Foundations of Computer Science</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">CS 24000 - Programming in C</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">CS 25000 - Computer Architecture</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">CS 25100 - Data Structures & Algorithms</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">CS 18000 - Problem Solving & Object-Oriented Programming</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">CS 18200 - Foundations of Computer Science</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">CS 24000 - Programming in C</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">CS 25000 - Computer Architecture</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">CS 25100 - Data Structures & Algorithms</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="color: #007AFF; margin-bottom: 15px;">Mathematics & Finance</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">STAT 35000 - Introduction to Statistics</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">STAT 41600 - Probability</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">MA 26100 - Multivariate Calculus</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">MA 26500 - Linear Algebra</li>
-                        <li style="margin-bottom: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">MGMT 31000 - Financial Management</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">STAT 35000 - Introduction to Statistics</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">STAT 41600 - Probability</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">MA 26100 - Multivariate Calculus</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">MA 26500 - Linear Algebra</li>
+                        <li style="margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 6px; color: white;">MGMT 31000 - Financial Management</li>
                     </ul>
                 </div>
             </div>
         `,
         experience: `
-            <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Experience</h2>
-            <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                <h3 style="color: #333; margin-bottom: 5px; font-size: 18px;">CS 19300 Tools - Teaching Assistant</h3>
-                <p style="color: #007AFF; margin-bottom: 10px; font-weight: 600;">Purdue Computer Science • 08/2025 - Present</p>
-                <ul style="color: #666; line-height: 1.6;">
+            <h2 style="color: white; margin-bottom: 20px; font-size: 24px;">Experience</h2>
+            <div style="margin-bottom: 25px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                <h3 style="color: white; margin-bottom: 5px; font-size: 18px;">CS 19300 Tools - Teaching Assistant</h3>
+                <p style="color: #e0e0e0; margin-bottom: 10px; font-weight: 600;">Purdue Computer Science • 08/2025 - Present</p>
+                <ul style="color: #e0e0e0; line-height: 1.6;">
                     <li>Taught 200+ students core technical tools including GitHub version control and LaTeX document preparation</li>
                     <li>Supported student learning through PSO office hours, homework grading, and active monitoring of the Ed Discussion Q&A forum</li>
                 </ul>
             </div>
-            <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                <h3 style="color: #333; margin-bottom: 5px; font-size: 18px;">College of Science Ambassador</h3>
-                <p style="color: #007AFF; margin-bottom: 10px; font-weight: 600;">Purdue College of Science • 08/2025 - Present</p>
-                <ul style="color: #666; line-height: 1.6;">
+            <div style="margin-bottom: 25px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                <h3 style="color: white; margin-bottom: 5px; font-size: 18px;">College of Science Ambassador</h3>
+                <p style="color: #e0e0e0; margin-bottom: 10px; font-weight: 600;">Purdue College of Science • 08/2025 - Present</p>
+                <ul style="color: #e0e0e0; line-height: 1.6;">
                     <li>Representing the College of Science to prospective students, families, and university visitors</li>
                 </ul>
             </div>
-            <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                <h3 style="color: #333; margin-bottom: 5px; font-size: 18px;">Director of Industry Relations & Quantitative Analyst</h3>
-                <p style="color: #007AFF; margin-bottom: 10px; font-weight: 600;">Boiler Quant • 09/2024 - Present</p>
-                <ul style="color: #666; line-height: 1.6;">
+            <div style="margin-bottom: 25px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                <h3 style="color: white; margin-bottom: 5px; font-size: 18px;">Director of Industry Relations & Quantitative Analyst</h3>
+                <p style="color: #e0e0e0; margin-bottom: 10px; font-weight: 600;">Boiler Quant • 09/2024 - Present</p>
+                <ul style="color: #e0e0e0; line-height: 1.6;">
                     <li>Built alumni database of 254 quants and hosted panels, resume reviews, mock interviews, and coffee chats</li>
                     <li>Compiled sheet of 160 quant firms, organized Chicago & NYC office tours, and provided trading competitions & conferences</li>
                     <li>Partnered with top 40 collegiate quant finance clubs for collaboration and expanded industry outreach</li>
                 </ul>
             </div>
-            <p style="color: #666; font-style: italic; margin-top: 20px;">And many more exciting experiences!</p>
+            <p style="color: #e0e0e0; font-style: italic; margin-top: 20px;">And many more exciting experiences!</p>
         `,
         projects: `
-            <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Projects</h2>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 24px;">Projects</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                    <h3 style="color: #333; margin-bottom: 10px;">Calculator App</h3>
-                    <p style="color: #666; margin-bottom: 10px;">Calculator App made in Android Studio in Java using String Tokenizer</p>
+                <div style="padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                    <h3 style="color: white; margin-bottom: 10px;">Calculator App</h3>
+                    <p style="color: #e0e0e0; margin-bottom: 10px;">Calculator App made in Android Studio in Java using String Tokenizer</p>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Java</span>
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Android Studio</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Java</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Android Studio</span>
                     </div>
                 </div>
-                <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                    <h3 style="color: #333; margin-bottom: 10px;">OpenWeather Project</h3>
-                    <p style="color: #666; margin-bottom: 10px;">Open Weather Project made with weather API in Android Studio App</p>
+                <div style="padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                    <h3 style="color: white; margin-bottom: 10px;">OpenWeather Project</h3>
+                    <p style="color: #e0e0e0; margin-bottom: 10px;">Open Weather Project made with weather API in Android Studio App</p>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Java</span>
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Weather API</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Java</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Weather API</span>
                     </div>
                 </div>
-                <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                    <h3 style="color: #333; margin-bottom: 10px;">Raylib Project Part 2</h3>
-                    <p style="color: #666; margin-bottom: 10px;">Game built with Raylib to simulate Evolution of Genetic Algorithms with 2 Types of Autonomous Agents</p>
+                <div style="padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                    <h3 style="color: white; margin-bottom: 10px;">Raylib Project Part 2</h3>
+                    <p style="color: #e0e0e0; margin-bottom: 10px;">Game built with Raylib to simulate Evolution of Genetic Algorithms with 2 Types of Autonomous Agents</p>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">C++</span>
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Genetic Algorithms</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">C++</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Genetic Algorithms</span>
                     </div>
                 </div>
-                <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                    <h3 style="color: #333; margin-bottom: 10px;">OpenCV Hand Raise Project</h3>
-                    <p style="color: #666; margin-bottom: 10px;">Using Python OpenCV and Hand + Pose Skeletal Model, detects hand landmarks, raised hand, 3 finger salute</p>
+                <div style="padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                    <h3 style="color: white; margin-bottom: 10px;">OpenCV Hand Raise Project</h3>
+                    <p style="color: #e0e0e0; margin-bottom: 10px;">Using Python OpenCV and Hand + Pose Skeletal Model, detects hand landmarks, raised hand, 3 finger salute</p>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Python</span>
-                        <span style="background: #007AFF; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Computer Vision</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Python</span>
+                        <span style="background: white; color: #36454F; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Computer Vision</span>
                     </div>
                 </div>
             </div>
-            <p style="color: #666; font-style: italic; margin-top: 20px;">And 10+ more projects!</p>
+            <p style="color: #e0e0e0; font-style: italic; margin-top: 20px;">And 10+ more projects!</p>
         `,
         research: `
-            <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Research</h2>
-            <div style="padding: 25px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                <h3 style="color: #333; margin-bottom: 5px; font-size: 20px;">Computer Science Research Associate</h3>
-                <p style="color: #007AFF; margin-bottom: 15px; font-weight: 600; font-size: 16px;">UC Berkeley MITRA Data Team • 08/2023 - 06/2024</p>
-                <ul style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+            <h2 style="color: white; margin-bottom: 20px; font-size: 24px;">Research</h2>
+            <div style="padding: 25px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                <h3 style="color: white; margin-bottom: 5px; font-size: 20px;">Computer Science Research Associate</h3>
+                <p style="color: #e0e0e0; margin-bottom: 15px; font-weight: 600; font-size: 16px;">UC Berkeley MITRA Data Team • 08/2023 - 06/2024</p>
+                <ul style="color: #e0e0e0; line-height: 1.8; margin-bottom: 20px;">
                     <li>Developed NLP translation algorithms for OCR correction on Sanskrit texts</li>
                     <li>Constructed an AI classifier tool utilizing ML models to train metadata</li>
                     <li>Tested deduplication techniques on corrected data</li>
                     <li>Collaborated on publishing papers in NLP science journals</li>
                     <li>Presented our NLP models on Tibetan texts at a virtual conference in Dharmshala with the Dalai Lama</li>
                 </ul>
-                <a href="https://dharmamitra.org/" target="_blank" style="display: inline-block; padding: 10px 20px; background: #007AFF; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">Visit Dharmamitra Project</a>
+                <a href="https://dharmamitra.org/" target="_blank" style="display: inline-block; padding: 10px 20px; background: white; color: #36454F; text-decoration: none; border-radius: 6px; font-weight: 500;">Visit Dharmamitra Project</a>
             </div>
         `,
         skills: `
-            <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Skills</h2>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 24px;">Skills</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div>
-                    <h3 style="color: #007AFF; margin-bottom: 15px; font-size: 18px;">Languages</h3>
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 18px;">Languages</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">C</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">C++</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Java</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Python</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">R</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">HTML/CSS/JS</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">C</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">C++</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Java</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Python</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">R</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">HTML/CSS/JS</span>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: #007AFF; margin-bottom: 15px; font-size: 18px;">Libraries/Frameworks</h3>
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 18px;">Libraries/Frameworks</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">NumPy</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Pandas</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">React</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Flutter</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Node.js</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Unity</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">NumPy</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Pandas</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">React</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Flutter</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Node.js</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Unity</span>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: #007AFF; margin-bottom: 15px; font-size: 18px;">Technical</h3>
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 18px;">Technical</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Machine Learning</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">NLP</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Computer Vision</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">REST APIs</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Git</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Linux</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Machine Learning</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">NLP</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Computer Vision</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">REST APIs</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Git</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Linux</span>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: #007AFF; margin-bottom: 15px; font-size: 18px;">Interests</h3>
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 18px;">Interests</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Chess</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Poker</span>
-                        <span style="background: #007AFF; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Competitive Programming</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Chess</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Poker</span>
+                        <span style="background: white; color: #36454F; padding: 6px 12px; border-radius: 6px; font-size: 14px;">Competitive Programming</span>
                     </div>
                 </div>
             </div>
         `,
         hobbies: `
-            <h2 style="color: #007AFF; margin-bottom: 20px; font-size: 24px;">Hobbies</h2>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 24px;">Hobbies</h2>
             <div style="display: grid; grid-template-columns: 1fr; gap: 25px;">
-                <div style="padding: 25px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                    <h3 style="color: #333; margin-bottom: 15px; font-size: 20px;">♟️ Chess</h3>
-                    <p style="color: #666; line-height: 1.8;">
+                <div style="padding: 25px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 20px;">♟️ Chess</h3>
+                    <p style="color: #e0e0e0; line-height: 1.8;">
                         I've loved strategy games ever since I was a kid, when I first started playing chess and poker with my dad. That early fascination grew into a lifelong passion for analytical thinking and competition. In high school, I founded and presided over the Chess Club, expanding it to 140 members and building official affiliations with both the New Jersey State Chess Federation and the U.S. Chess Federation. I organized major events such as the Holiday Chess Tournament, which drew over 100 attendees, and a communitywide Chessathon that raised over $1,500 in sponsorships from organizations including Jane Street, SIG, Chess.com, and more.
                     </p>
                 </div>
-                <div style="padding: 25px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #007AFF;">
-                    <h3 style="color: #333; margin-bottom: 15px; font-size: 20px;">🃏 Poker</h3>
-                    <p style="color: #666; line-height: 1.8;">
+                <div style="padding: 25px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; border-left: 4px solid white;">
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 20px;">🃏 Poker</h3>
+                    <p style="color: #e0e0e0; line-height: 1.8;">
                         I first got into poker through a few friends in high school who introduced me to the game's blend of logic, psychology, and strategy. Since then, my interest has grown even more through Boiler Quant, Purdue's quantitative finance club, where many members share a passion for poker and its mathematical depth. I love playing with club members and discussing hands, strategies, and theory, especially as I study concepts from the MIT Poker textbook. My goal now is to deepen my understanding of poker theory and continue improving as a thoughtful, disciplined player.
                     </p>
                 </div>
@@ -573,9 +571,17 @@ function initializeMacOSDesktop() {
     updateTime();
     setInterval(updateTime, 1000);
     
-    // Handle folder clicks - open content windows
+    // Handle folder clicks - open content windows and toggle selection
     document.querySelectorAll('.macos-folder').forEach(folder => {
         folder.addEventListener('click', () => {
+            // Remove selected class from all folders
+            document.querySelectorAll('.macos-folder').forEach(f => {
+                f.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked folder
+            folder.classList.add('selected');
+            
             const section = folder.getAttribute('data-section');
             if (section) {
                 openContentWindow(section);
