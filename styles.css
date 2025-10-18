@@ -307,6 +307,23 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.education-subsection-title {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin: 3rem 0 1.5rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.education-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 /* Experience Section */
 .experience-section {
     background-color: var(--bg-primary);
@@ -333,40 +350,185 @@ body {
 }
 
 .experience-header {
+    margin-bottom: 1rem;
+}
+
+.experience-title-date {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
+}
+
+.experience-title {
+    flex: 1;
+}
+
+.experience-date-location {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.date-range {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.location {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
 .company-name {
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.25rem;
+    font-weight: bold;
 }
 
 .role-title {
     font-size: 1.1rem;
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.date-range {
     color: var(--text-secondary);
-    font-weight: 500;
-    white-space: nowrap;
+    font-style: italic;
+    text-align: left;
 }
 
 .experience-description {
-    list-style-position: inside;
+    list-style-position: outside;
     color: var(--text-secondary);
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .experience-description li {
     margin-bottom: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 0;
+    margin-left: 1.5rem;
+}
+
+.experience-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.experience-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.experience-link:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--golden-glow);
+}
+
+/* Student Organizations Section */
+.student-organizations-section {
+    background-color: var(--bg-secondary);
+}
+
+.student-orgs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.student-org-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.student-org-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.student-org-header {
+    margin-bottom: 1rem;
+}
+
+.student-org-title-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.student-org-title {
+    flex: 1;
+}
+
+.student-org-date-location {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.org-name {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+.org-title {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: left;
+}
+
+.student-org-description {
+    list-style-position: outside;
+    color: var(--text-secondary);
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.student-org-description li {
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+    margin-left: 1.5rem;
+}
+
+.student-org-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.student-org-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.student-org-link:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--golden-glow);
 }
 
 /* Projects Section */
@@ -461,36 +623,52 @@ body {
 }
 
 .research-header {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.research-title-date {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .research-title {
-    font-size: 1.5rem;
+    flex: 1;
+}
+
+.research-date-location {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.research-line1 {
     color: var(--text-primary);
+    font-weight: bold;
     margin-bottom: 0.25rem;
 }
 
-.research-organization {
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    font-weight: 600;
+.research-line2 {
+    color: var(--text-primary);
+    font-style: italic;
+    text-align: left;
 }
 
 .research-description {
-    list-style-position: inside;
+    list-style-position: outside;
     color: var(--text-secondary);
     margin: 1rem 0;
     line-height: 1.6;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .research-description li {
     margin-bottom: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 0;
+    margin-left: 1.5rem;
 }
 
 .report-link {
@@ -509,6 +687,49 @@ body {
     transform: translateY(-2px);
 }
 
+.research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.research-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.research-link:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--golden-glow);
+}
+
+.research-description-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 1.5rem 0 0 0;
+}
+
+.research-description-text a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.research-description-text a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
 /* Skills Section */
 .skills-section {
     background-color: var(--bg-secondary);
@@ -516,8 +737,10 @@ body {
 
 .skills-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .skills-category {
@@ -647,6 +870,19 @@ body {
 
     .experience-header {
         flex-direction: column;
+    }
+
+    .experience-title-date,
+    .student-org-title-date,
+    .research-title-date {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .experience-date-location,
+    .student-org-date-location,
+    .research-date-location {
+        text-align: left;
     }
 
     .date-range {
@@ -1368,6 +1604,51 @@ body.loaded .section {
     line-height: 1.6;
 }
 
+/* Project Navigation Styles */
+#prev-project:hover,
+#next-project:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#prev-project:disabled,
+#next-project:disabled {
+    cursor: not-allowed;
+    opacity: 0.5 !important;
+}
+
+#prev-project:disabled:hover,
+#next-project:disabled:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: none;
+    box-shadow: none;
+}
+
+#project-display {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Project Card Hover Effects */
+#project-display a:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Content Window Responsive */
 @media (max-width: 768px) {
     .content-window {
@@ -1377,6 +1658,30 @@ body.loaded .section {
     
     .content-window-content {
         padding: 15px;
+    }
+    
+    #project-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #prev-project,
+    #next-project {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    #project-display div {
+        padding: 24px !important;
+    }
+    
+    #project-display h3 {
+        font-size: 24px !important;
+    }
+    
+    #project-display .project-icon {
+        width: 50px !important;
+        height: 50px !important;
     }
 }
 
@@ -1392,5 +1697,32 @@ body.loaded .section {
     
     .content-window-title {
         font-size: 12px;
+    }
+    
+    #project-navigation {
+        gap: 10px;
+    }
+    
+    #prev-project,
+    #next-project {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    #project-display div {
+        padding: 20px !important;
+    }
+    
+    #project-display h3 {
+        font-size: 20px !important;
+    }
+    
+    #project-display p {
+        font-size: 14px !important;
+    }
+    
+    #project-display .project-icon {
+        width: 45px !important;
+        height: 45px !important;
     }
 }
