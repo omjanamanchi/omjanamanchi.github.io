@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Moon, Sun, GraduationCap, Briefcase, Lightbulb, CheckSquare2, Mail, User, FlaskConical } from 'lucide-react'
+import { Menu, X, GraduationCap, Briefcase, Lightbulb, CheckSquare2, FlaskConical, Users, Rocket, Link } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface NavbarProps {
@@ -7,19 +7,20 @@ interface NavbarProps {
   toggleDarkMode: () => void
 }
 
-const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
+const Navbar = (_props: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
   const navLinks = [
-    { name: 'About', href: '#about', icon: User, color: 'blue' },
     { name: 'Education', href: '#education', icon: GraduationCap, color: 'purple' },
-    { name: 'Experience', href: '#experience', icon: Briefcase, color: 'gray' },
-    { name: 'Research', href: '#research', icon: FlaskConical, color: 'blue' },
+    { name: 'Experience', href: '#experience', icon: Briefcase, color: 'cyan' },
+    { name: 'Research', href: '#research', icon: FlaskConical, color: 'cyan' },
+    { name: 'Leadership', href: '#leadership', icon: Users, color: 'purple' },
     { name: 'Projects', href: '#projects', icon: Lightbulb, color: 'purple' },
     { name: 'Skills', href: '#skills', icon: CheckSquare2, color: 'green' },
-    { name: 'Contact', href: '#contact', icon: Mail, color: 'orange' },
+    { name: 'Hobbies', href: '#interests', icon: Rocket, color: 'cyan' },
+    { name: 'Connect', href: '#contact', icon: Link, color: 'cyan' },
   ]
 
   useEffect(() => {
@@ -49,7 +50,9 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
-      const navbarHeight = 80
+      // Get navbar height from CSS variable, fallback to 80px
+      const navbarHeight = parseFloat(getComputedStyle(document.documentElement)
+        .getPropertyValue('--navbar-height')) || 80
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
       const offsetPosition = elementPosition - navbarHeight
 
@@ -64,40 +67,24 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const getIconColor = (color: string, isActive: boolean) => {
     if (isActive) {
       const colors: { [key: string]: string } = {
-        blue: 'text-blue-400',
-        purple: 'text-purple-400',
-        gray: 'text-gray-400',
-        green: 'text-green-400',
-        orange: 'text-orange-400',
+        cyan: 'text-accent-cyan',
+        purple: 'text-accent-purple',
+        green: 'text-accent-green',
       }
-      return colors[color] || 'text-primary-400'
+      return colors[color] || 'text-accent-cyan'
     }
-    return 'text-gray-400'
-  }
-
-  const getBgGradient = (color: string) => {
-    const gradients: { [key: string]: string } = {
-      blue: 'from-blue-500/20 to-blue-600/10',
-      purple: 'from-purple-500/20 to-purple-600/10',
-      gray: 'from-gray-500/20 to-gray-600/10',
-      green: 'from-green-500/20 to-green-600/10',
-      orange: 'from-orange-500/20 to-orange-600/10',
-    }
-    return gradients[color] || 'from-primary-500/20 to-primary-600/10'
+    return 'text-text-secondary'
   }
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-slate-900/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg'
-          : 'bg-slate-900/80 dark:bg-slate-900/80 backdrop-blur-sm'
-      }`}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}
     >
-      <div className="container-max">
-        <div className="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
+      <div className="container-max w-full">
+        <div className="flex items-center justify-between w-full" style={{ height: 'var(--navbar-height, 5rem)' }}>
           {/* Logo */}
           <motion.a
             href="#"
@@ -105,11 +92,19 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
-            className="text-2xl md:text-3xl font-bold text-white hover:text-gray-200 transition-colors flex items-center"
+            className="flex items-center relative"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            Om Janamanchi
+            <img
+              src="/logo_apple_premium_centered.svg"
+              alt="OJ Logo"
+              className="w-14 h-14"
+              style={{ 
+                filter: 'drop-shadow(0 2px 8px rgba(88, 166, 255, 0.2))',
+              }}
+            />
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -127,18 +122,22 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                   }}
                   className={`relative flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 group ${
                     isActive
-                      ? 'bg-gradient-to-r ' + getBgGradient(link.color) + ' text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-slate-800/50'
+                      ? 'bg-gradient-subtle text-text-primary'
+                      : 'text-text-secondary hover:text-accent-cyan hover:bg-bg-surface'
                   }`}
                 >
-                  <div className={`relative ${isActive ? getIconColor(link.color, true) : 'text-gray-400 group-hover:text-white'}`}>
+                  <div className={isActive ? getIconColor(link.color, true) : 'text-text-secondary group-hover:text-accent-cyan'}>
                     <Icon className="w-4 h-4" />
                   </div>
                   <span className="text-sm font-medium">{link.name}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeSection"
-                      className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r ${getBgGradient(link.color)}`}
+                      className={`absolute -bottom-1 left-0 right-0 h-0.5 ${
+                        link.color === 'cyan' ? 'bg-accent-cyan' :
+                        link.color === 'purple' ? 'bg-accent-purple' :
+                        'bg-accent-green'
+                      }`}
                       initial={false}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
@@ -146,37 +145,13 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                 </a>
               )
             })}
-            
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg hover:bg-slate-800/50 transition-colors flex items-center text-white"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-300" />
-              )}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-4">
             <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-slate-800"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
-              )}
-            </button>
-            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-slate-800"
+              className="p-2 rounded-lg bg-bg-surface border border-border-default text-text-secondary hover:text-accent-cyan transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -196,26 +171,31 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800"
+            className="md:hidden bg-bg-surface border-t border-border-default"
           >
             <div className="container-max px-4 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(link.href)
-                  }}
-                  className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    activeSection === link.href.substring(1)
-                      ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const Icon = link.icon
+                const isActive = activeSection === link.href.substring(1)
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToSection(link.href)
+                    }}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      isActive
+                        ? 'bg-gradient-subtle text-accent-cyan'
+                        : 'text-text-secondary hover:bg-bg-elevated hover:text-accent-cyan'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {link.name}
+                  </a>
+                )
+              })}
             </div>
           </motion.div>
         )}
@@ -225,4 +205,3 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
 }
 
 export default Navbar
-

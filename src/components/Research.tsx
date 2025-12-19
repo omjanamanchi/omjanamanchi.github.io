@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { research } from '../data/research'
-import { Calendar, MapPin, ExternalLink } from 'lucide-react'
+import { ExternalLink, Calendar, MapPin } from 'lucide-react'
 
 const Research = () => {
   const ref = useRef(null)
@@ -15,7 +15,7 @@ const Research = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-text-primary"
         >
           Research
         </motion.h2>
@@ -30,55 +30,46 @@ const Research = () => {
               className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-primary-600 dark:border-primary-400 hover:shadow-xl transition-shadow"
             >
               {/* Header with Logo and Organization */}
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                <div className="flex items-start gap-4 flex-1">
-                  {item.logo && (
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  {item.logo ? (
                     <img
                       src={item.logo}
                       alt={`${item.organization} logo`}
-                      className="w-16 h-16 object-contain"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
-                        // Hide image if it fails to load
                         e.currentTarget.style.display = 'none'
                       }}
                     />
+                  ) : (
+                    <div className="w-full h-full bg-gray-300 dark:bg-slate-600"></div>
                   )}
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-1">
+                    <h3 className="text-xl font-bold text-text-primary">
                       {item.title}
                     </h3>
-                    <p className="text-lg md:text-xl text-primary-600 dark:text-primary-400 font-medium mb-1">
+                    <div className="flex items-center gap-2 text-text-primary">
+                      <Calendar className="w-4 h-4" />
+                      <span className="text-sm">{item.period}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start justify-between">
+                    <p className="text-lg font-semibold text-text-primary">
                       {item.lab || item.organization}
                     </p>
-                    {item.lab && (
-                      <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
-                        {item.organization}
-                      </p>
-                    )}
-                    <p className="text-sm md:text-base text-gray-500 dark:text-gray-500 mt-1">
-                      {item.type}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2 text-sm md:text-base text-gray-600 dark:text-gray-400">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>{item.period}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    <span>{item.location}</span>
+                    <div className="flex items-center gap-2 text-text-primary">
+                      <MapPin className="w-4 h-4" />
+                      <span className="text-sm">{item.location}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Description */}
-              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                {item.description}
-              </p>
+              <div className="border-t border-gray-200 dark:border-slate-700 my-4"></div>
 
               {/* Achievements */}
-              <ul className="space-y-4 mb-6">
+              <ul className="space-y-2 mb-4">
                 {item.achievements.map((achievement, idx) => {
                   const colonIndex = achievement.indexOf(':')
                   const header = colonIndex !== -1 ? achievement.substring(0, colonIndex) : ''
@@ -87,10 +78,10 @@ const Research = () => {
                   return (
                     <li
                       key={idx}
-                      className="flex items-start gap-3 text-base md:text-lg text-gray-700 dark:text-gray-300"
+                      className="flex items-start gap-2 text-text-primary"
                     >
-                      <span className="text-primary-600 dark:text-primary-400 mt-1 flex-shrink-0">▹</span>
-                      <span className="leading-relaxed">
+                      <span className="text-primary-600 dark:text-primary-400 mt-1">▹</span>
+                      <span>
                         {header && <span className="font-bold">{header}:</span>} {content}
                       </span>
                     </li>
@@ -100,10 +91,29 @@ const Research = () => {
 
               {/* Impact */}
               {item.impact && (
-                <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-base md:text-lg text-text-primary mb-6 leading-relaxed">
                   <span className="font-bold">Research Impact: </span>
                   {item.impact}
                 </p>
+              )}
+
+              {/* Skills */}
+              {item.skills && item.skills.length > 0 && (
+                <div className="mb-4">
+                  <p className="text-sm font-semibold text-text-primary mb-2">
+                    Skills:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {item.skills.map((skill, idx) => (
+                      <span
+                        key={skill}
+                        className="text-sm text-text-primary"
+                      >
+                        {skill}{idx < (item.skills?.length ?? 0) - 1 && ' · '}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               )}
 
               {/* Links */}

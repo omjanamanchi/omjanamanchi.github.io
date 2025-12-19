@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { experiences, ExperienceItem } from '../data/experience'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Calendar, MapPin } from 'lucide-react'
 
 interface ExperienceCardProps {
   exp: ExperienceItem
@@ -18,40 +18,49 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
       ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
       animate={cardInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 dark:border-slate-700 hover:shadow-xl transition-shadow"
+      transition={{ duration: 0.8, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      className="card-gradient-hover"
     >
       <div className="flex items-start gap-4 mb-4">
-        {exp.logo && (
-          <img
-            src={exp.logo}
-            alt={`${exp.company} logo`}
-            className="w-16 h-16 object-contain flex-shrink-0"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none'
-            }}
-          />
-        )}
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-            {exp.title}
-          </h3>
-          <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
-            {exp.company}
-          </p>
-          {exp.employmentType && (
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              {exp.employmentType}
-            </p>
+        <div className="company-logo">
+          {exp.logo ? (
+            <img
+              src={exp.logo}
+              alt={`${exp.company} logo`}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-bg-elevated"></div>
           )}
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            {exp.period}
-          </p>
+        </div>
+        <div className="flex-1">
+          <div className="flex items-start justify-between mb-1">
+            <h3 className="text-xl font-bold text-text-primary">
+              {exp.title}
+            </h3>
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Calendar className="w-4 h-4" />
+              <span className="text-sm">{exp.period}</span>
+            </div>
+          </div>
+          <div className="flex items-start justify-between">
+            <p className="text-lg font-semibold text-accent-cyan">
+              {exp.company}
+            </p>
+            <div className="flex items-center gap-2 text-text-secondary">
+              <MapPin className="w-4 h-4" />
+              <span className="text-sm">{exp.location}</span>
+            </div>
+          </div>
         </div>
       </div>
+      <div className="border-t border-border-default my-4"></div>
 
       {exp.additionalInfo && (
-        <p className="text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+        <p className="text-base text-text-secondary mb-4 leading-relaxed">
           {exp.additionalInfo}
         </p>
       )}
@@ -61,9 +70,9 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
           {exp.description.map((desc, idx) => (
             <li
               key={idx}
-              className="flex items-start gap-2 text-gray-700 dark:text-gray-300"
+              className="flex items-start gap-2 text-text-secondary"
             >
-              <span className="text-primary-600 dark:text-primary-400 mt-1">▹</span>
+              <span className="text-accent-cyan mt-1">▹</span>
               <span>{desc}</span>
             </li>
           ))}
@@ -72,16 +81,16 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
 
       {exp.skills && exp.skills.length > 0 && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
+          <p className="text-sm font-semibold text-text-primary mb-2">
             Skills:
           </p>
           <div className="flex flex-wrap gap-2">
-            {exp.skills.map((skill, idx) => (
+            {exp.skills.map((skill) => (
               <span
                 key={skill}
-                className="text-sm text-gray-600 dark:text-gray-400"
+                className="badge"
               >
-                {skill}{idx < exp.skills.length - 1 && ' · '}
+                {skill}
               </span>
             ))}
           </div>
@@ -96,7 +105,7 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-primary text-text-primary rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-glow-cyan"
             >
               {link.label}
               <ExternalLink className="w-4 h-4" />
@@ -113,16 +122,26 @@ const Experience = () => {
   const sectionInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
   return (
-    <section id="experience" ref={sectionRef} className="section-padding bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <section id="experience" ref={sectionRef} className="section-padding bg-bg-surface">
       <div className="container-max">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-white"
-        >
-          Experience
-        </motion.h2>
+        <div className="section-header">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="section-label"
+          >
+            Experience
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="section-title"
+          >
+            Professional Experience
+          </motion.h2>
+        </div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
@@ -135,4 +154,3 @@ const Experience = () => {
 }
 
 export default Experience
-

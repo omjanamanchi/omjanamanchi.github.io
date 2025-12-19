@@ -1,5 +1,4 @@
-import { Github, Linkedin, Mail, FileText, ArrowUp } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Github, Linkedin, Mail, FileText } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -18,23 +17,17 @@ const Footer = () => {
     }
   }
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
-
   const quickLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Research', href: '#research' },
+    { name: 'Leadership', href: '#leadership' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
   ]
 
   return (
-    <footer className="bg-slate-900 dark:bg-black text-gray-300 py-16 relative">
+    <footer className="bg-slate-900 dark:bg-black text-text-primary py-16 relative">
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Left - Name */}
@@ -46,7 +39,7 @@ const Footer = () => {
 
           {/* Center - Thank You Message */}
           <div className="flex items-center">
-            <p className="text-gray-300 text-base leading-relaxed">
+            <p className="text-text-primary text-base leading-relaxed">
               Thanks for taking the time to check out my website! I hope you enjoyed getting to know me a little better. I'm always excited to meet new people, so don't hesitate to reach out if you have any questions or just want to connect.
             </p>
           </div>
@@ -94,14 +87,14 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-slate-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 w-full">
             {/* Left - Copyright */}
-            <div className="text-sm text-gray-400">
-              <p>© {currentYear} Om Janamanchi. All rights reserved.</p>
+            <div className="text-sm text-text-primary whitespace-nowrap flex-shrink-0">
+              © {currentYear} Om Janamanchi. All rights reserved.
             </div>
 
             {/* Center - Navigation Links */}
-            <div className="flex gap-6 text-sm text-gray-400">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-text-primary flex-1 px-4">
               {quickLinks.map((link) => (
                 <a
                   key={link.name}
@@ -110,7 +103,7 @@ const Footer = () => {
                     e.preventDefault()
                     scrollToSection(link.href)
                   }}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors whitespace-nowrap"
                 >
                   {link.name}
                 </a>
@@ -118,34 +111,21 @@ const Footer = () => {
             </div>
 
             {/* Right - Open Source License */}
-            <div className="text-sm text-gray-400 text-center md:text-right">
-              <p>
-                A{' '}
-                <a
-                  href="https://github.com/omjanamanchi/omjanamanchi.github.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300 underline"
-                >
-                  free and open-source
-                </a>{' '}
-                creation, licensed MIT
-              </p>
+            <div className="text-sm text-text-primary whitespace-nowrap flex-shrink-0">
+              A{' '}
+              <a
+                href="https://github.com/omjanamanchi/omjanamanchi.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                free and open-source
+              </a>{' '}
+              creation, licensed MIT
             </div>
           </div>
         </div>
       </div>
-
-      {/* Scroll to Top Button */}
-      <motion.button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center shadow-lg transition-colors z-50"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="w-6 h-6 text-white" />
-      </motion.button>
     </footer>
   )
 }

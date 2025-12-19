@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { leadership, LeadershipItem } from '../data/leadership'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Calendar, MapPin } from 'lucide-react'
 
 interface LeadershipCardProps {
   item: LeadershipItem
@@ -22,39 +22,45 @@ const LeadershipCard = ({ item, index }: LeadershipCardProps) => {
       className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 dark:border-slate-700 hover:shadow-xl transition-shadow"
     >
       <div className="flex items-start gap-4 mb-4">
-        {item.logo && (
-          <img
-            src={item.logo}
-            alt={`${item.organization} logo`}
-            className="w-16 h-16 object-contain flex-shrink-0"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none'
-            }}
-          />
-        )}
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-            {item.title}
-          </h3>
-          <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
-            {item.organization}
-          </p>
-          {item.employmentType && (
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              {item.employmentType}
-            </p>
+        <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+          {item.logo ? (
+            <img
+              src={item.logo}
+              alt={`${item.organization} logo`}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-300 dark:bg-slate-600"></div>
           )}
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            {item.period}
-          </p>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-            {item.location}
-          </p>
+        </div>
+        <div className="flex-1">
+          <div className="flex items-start justify-between mb-1">
+            <h3 className="text-xl font-bold text-text-primary">
+              {item.title}
+            </h3>
+            <div className="flex items-center gap-2 text-text-primary">
+              <Calendar className="w-4 h-4" />
+              <span className="text-sm">{item.period}</span>
+            </div>
+          </div>
+          <div className="flex items-start justify-between">
+            <p className="text-lg font-semibold text-text-primary">
+              {item.organization}
+            </p>
+            <div className="flex items-center gap-2 text-text-primary">
+              <MapPin className="w-4 h-4" />
+              <span className="text-sm">{item.location}</span>
+            </div>
+          </div>
         </div>
       </div>
+      <div className="border-t border-gray-200 dark:border-slate-700 my-4"></div>
 
       {item.additionalInfo && (
-        <p className="text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+        <p className="text-base text-text-primary mb-4 leading-relaxed">
           {item.additionalInfo}
         </p>
       )}
@@ -64,7 +70,7 @@ const LeadershipCard = ({ item, index }: LeadershipCardProps) => {
           {item.description.map((desc, idx) => (
             <li
               key={idx}
-              className="flex items-start gap-2 text-gray-700 dark:text-gray-300"
+              className="flex items-start gap-2 text-text-primary"
             >
               <span className="text-primary-600 dark:text-primary-400 mt-1">▹</span>
               <span>{desc}</span>
@@ -76,7 +82,7 @@ const LeadershipCard = ({ item, index }: LeadershipCardProps) => {
       {item.previousRoles && item.previousRoles.length > 0 && (
         <div className="mb-4">
           {item.previousRoles.map((role, idx) => (
-            <p key={idx} className="text-sm text-gray-600 dark:text-gray-400">
+            <p key={idx} className="text-sm text-text-primary">
               {role}
             </p>
           ))}
@@ -85,14 +91,14 @@ const LeadershipCard = ({ item, index }: LeadershipCardProps) => {
 
       {item.skills && item.skills.length > 0 && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
+          <p className="text-sm font-semibold text-text-primary mb-2">
             Skills:
           </p>
           <div className="flex flex-wrap gap-2">
             {item.skills.map((skill, idx) => (
               <span
                 key={skill}
-                className="text-sm text-gray-600 dark:text-gray-400"
+                className="text-sm text-text-primary"
               >
                 {skill}{idx < item.skills.length - 1 && ' · '}
               </span>
@@ -132,14 +138,18 @@ const Leadership = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={sectionInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-text-primary"
         >
           Leadership
         </motion.h2>
 
         <div className="space-y-8">
           {leadership.map((item, index) => (
-            <LeadershipCard key={`${item.organization}-${item.period}`} item={item} index={index} />
+            <LeadershipCard 
+              key={`${item.organization}-${item.period}`} 
+              item={item} 
+              index={index}
+            />
           ))}
         </div>
       </div>

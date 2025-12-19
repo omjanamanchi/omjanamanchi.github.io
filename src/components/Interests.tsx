@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Gamepad2, TrendingUp, Users, BookOpen } from 'lucide-react'
+import { Gamepad2, Users, Crown, CreditCard } from 'lucide-react'
 
 const Interests = () => {
   const ref = useRef(null)
@@ -9,34 +9,28 @@ const Interests = () => {
 
   const interests = [
     {
+      icon: <Crown className="w-8 h-8" />,
+      title: 'Chess',
+      description:
+        'Founder of high school Chess Club and school district chess program. Competed in New Jersey State Chess Federation tournaments.',
+    },
+    {
       icon: <Gamepad2 className="w-8 h-8" />,
       title: 'Competitive Programming',
       description:
         'Participating in CS 21000 Competitive Programming I, solving problems on Codeforces, and continuously improving algorithmic problem-solving skills.',
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: 'Quantitative Finance & Trading',
+      icon: <CreditCard className="w-8 h-8" />,
+      title: 'Poker',
       description:
-        'Passionate about markets, algorithmic trading strategies, and building quantitative models. Active member of Boiler Quant working on trading systems.',
-    },
-    {
-      icon: <Gamepad2 className="w-8 h-8" />,
-      title: 'Chess',
-      description:
-        'Founder of high school Chess Club and school district chess program. Competed in New Jersey State Chess Federation tournaments.',
+        'Enjoy playing poker and analyzing game theory, probability, and strategic decision-making in competitive card games.',
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: 'Community Service',
       description:
         'Former President of WISH (Working in Senior Homes) club, organizing community service initiatives and building connections with local seniors.',
-    },
-    {
-      icon: <BookOpen className="w-8 h-8" />,
-      title: 'Teaching & Mentorship',
-      description:
-        'Enjoy sharing knowledge as a Teaching Assistant, helping students learn programming fundamentals and developer tools.',
     },
   ]
 
@@ -47,7 +41,7 @@ const Interests = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white"
+          className="text-4xl md:text-5xl font-bold text-center mb-4 text-text-primary"
         >
           Beyond the Code
         </motion.h2>
@@ -56,12 +50,14 @@ const Interests = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
+          className="text-center text-text-primary mb-12 max-w-2xl mx-auto"
         >
-          When I'm not coding, I enjoy exploring these interests and hobbies that keep me balanced and inspired.
+          When I'm not coding, I enjoy exploring these interests{' '}
+          <br />
+          and hobbies that keep me balanced and inspired.
         </motion.p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {interests.map((interest, index) => (
             <motion.div
               key={interest.title}
@@ -73,10 +69,10 @@ const Interests = () => {
               <div className="text-primary-600 dark:text-primary-400 mb-4">
                 {interest.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="text-xl font-bold text-text-primary mb-3">
                 {interest.title}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-text-primary leading-relaxed">
                 {interest.description}
               </p>
             </motion.div>

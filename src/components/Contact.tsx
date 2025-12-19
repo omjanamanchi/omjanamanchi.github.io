@@ -101,10 +101,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text-primary">
             Let's Connect
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
+          <p className="text-lg text-text-primary max-w-4xl mx-auto">
             I'm always excited to discuss new opportunities, collaborate on projects, or<br />
             chat about quant finance, ML, and software engineering. Feel free to reach out!
           </p>
@@ -119,7 +119,7 @@ const Contact = () => {
             className="space-y-6 flex flex-col"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <h3 className="text-2xl font-bold text-text-primary mb-6">
                 Get in Touch
               </h3>
               <div className="space-y-4 pt-[22px]">
@@ -128,11 +128,11 @@ const Contact = () => {
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-lg transition-shadow group"
                 >
                   <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                    <Mail className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" />
+                    <Mail className="w-6 h-6 text-text-primary group-hover:text-red-400 transition-colors" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
-                    <p className="text-gray-900 dark:text-white font-medium">
+                    <p className="text-sm text-text-primary">Email</p>
+                    <p className="text-text-primary font-medium">
                       omjanamanchi@gmail.com
                     </p>
                   </div>
@@ -143,11 +143,11 @@ const Contact = () => {
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-lg transition-shadow group"
                 >
                   <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                    <Phone className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
+                    <Phone className="w-6 h-6 text-text-primary group-hover:text-accent-cyan transition-colors" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
-                    <p className="text-gray-900 dark:text-white font-medium">
+                    <p className="text-sm text-text-primary">Phone</p>
+                    <p className="text-text-primary font-medium">
                       732-947-2233
                     </p>
                   </div>
@@ -160,11 +160,11 @@ const Contact = () => {
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-lg transition-shadow group"
                 >
                   <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                    <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
+                    <Linkedin className="w-6 h-6 text-text-primary group-hover:text-accent-cyan transition-colors" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">LinkedIn</p>
-                    <p className="text-gray-900 dark:text-white font-medium">linkedin.com/in/omjanamanchi</p>
+                    <p className="text-sm text-text-primary">LinkedIn</p>
+                    <p className="text-text-primary font-medium">linkedin.com/in/omjanamanchi</p>
                   </div>
                 </a>
 
@@ -175,21 +175,21 @@ const Contact = () => {
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-lg transition-shadow group"
                 >
                   <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                    <Github className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
+                    <Github className="w-6 h-6 text-text-primary group-hover:text-accent-cyan transition-colors" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">GitHub</p>
-                    <p className="text-gray-900 dark:text-white font-medium">github.com/omjanamanchi</p>
+                    <p className="text-sm text-text-primary">GitHub</p>
+                    <p className="text-text-primary font-medium">github.com/omjanamanchi</p>
                   </div>
                 </a>
 
                 <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md">
                   <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                    <MapPin className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                    <MapPin className="w-6 h-6 text-text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
-                    <p className="text-gray-900 dark:text-white font-medium">
+                    <p className="text-sm text-text-primary">Location</p>
+                    <p className="text-text-primary font-medium">
                       New York Metropolitan Area
                     </p>
                   </div>
@@ -215,14 +215,14 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col h-full"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-2xl font-bold text-text-primary mb-6">
               Send a Message
             </h3>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex flex-col flex-1">
               <div className="pt-0">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-text-primary mb-2"
                 >
                   Name
                 </label>
@@ -241,7 +241,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-text-primary mb-2"
                 >
                   Email
                 </label>
@@ -266,7 +266,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-text-primary mb-2"
                 >
                   Message
                 </label>

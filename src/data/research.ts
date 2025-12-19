@@ -10,6 +10,7 @@ export interface ResearchItem {
   impact?: string
   links?: { label: string; url: string }[]
   logo?: string
+  skills?: string[]
 }
 
 export const research: ResearchItem[] = [
@@ -18,7 +19,7 @@ export const research: ResearchItem[] = [
     organization: "University of California, Berkeley",
     lab: "Berkeley Artificial Intelligence Research (BAIR) Lab - MITRA Data Team",
     period: "Aug 2023 - Jun 2024",
-    location: "New Jersey, United States · Remote",
+    location: "Remote",
     type: "Research",
     description: "Conducted applied machine learning and natural language processing research under Prof. Kurt Keutzer and Dr. Sebastian Nehrdich, developing AI systems for cultural heritage preservation and multilingual text digitization",
     achievements: [
@@ -34,7 +35,8 @@ export const research: ResearchItem[] = [
       { label: "Video Thesis", url: "https://www.youtube.com/watch?v=SMD6RGr-w9Q" },
       { label: "News Article", url: "https://www.merit-times.com/news/52590" }
     ],
-    logo: "/uc-berkeley-logo.png"
+    logo: "/uc_berkeley_logo.jpg",
+    skills: ["Natural Language Processing (NLP)", "Machine Learning", "Optical Character Recognition (OCR)", "Python", "Text Classification", "Data Preprocessing", "Deduplication Algorithms", "Research Publication", "Sanskrit", "Tibetan Language", "Multilingual NLP", "Cultural Heritage AI", "Academic Research", "Conference Presentations"]
   }
 ]
 

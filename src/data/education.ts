@@ -24,10 +24,9 @@ export interface EducationItem {
 export const education: EducationItem[] = [
   {
     institution: "Purdue University",
-    degree: "Bachelor of Science - B.S. Computer Science, Minors: Mathematics & Finance",
+    degree: "Bachelor of Science - B.S. Computer Science (Machine Intelligence), Minors: Mathematics & Finance",
     period: "Aug 2024 - May 2028",
     location: "West Lafayette, IN",
-    gpa: "4.0/4.0",
     minors: ["Mathematics", "Finance"],
     courses: [
       { code: "CS 18000", name: "Object-Oriented Programming & Problem Solving" },
@@ -41,12 +40,14 @@ export const education: EducationItem[] = [
       { code: "STAT 35000", name: "Introduction to Statistics" },
       { code: "STAT 41600", name: "Probability" },
     ],
-    logo: "/purdue-logo.png"
+    logo: "/purdue_university_logo.jpg"
   },
   {
     institution: "South Brunswick High School",
     degree: "High School Diploma | Computer Science Academy",
     period: "Sep 2020 - Jun 2024",
+    location: "South Brunswick, NJ",
+    gpa: "4.3/4.0",
     activities: [
       "Member @ South Brunswick School District (S.B.H.S) Budget Advocacy Committee",
       "Founder & President @ Chess Club",
@@ -65,22 +66,26 @@ export const education: EducationItem[] = [
       { code: "Capstone", name: "Computer Science Capstone" }
     ],
     academyDescription: "I was a member of the inaugural Computer Science Academy class — a selective advanced CS program with coursework in data structures, algorithms, game development, virtual reality, and software capstone projects, complemented by my extensive student leadership and community impact.",
-    logo: "/sbhs-logo.png"
+    logo: "/south_brunswick_high_school_logo.jpg"
   },
   {
     institution: "Ramapo College of New Jersey",
     degree: "Dual Enrollment, Computer Science",
     period: "Sep 2022 - Jun 2023",
+    location: "Mahwah, NJ",
+    gpa: "4.0/4.0",
     description: "I built mobile applications using Java and Kotlin, integrating RESTful APIs and Android tooling with emphasis on application architecture, user-centric design, and cross-platform functionality.",
     courses: [
       { code: "CMPS 28500", name: "Mobile Application Development" }
     ],
-    logo: "/ramapo-logo.png"
+    logo: "/ramapo_college_of_new_jersey_logo.jpg"
   },
   {
     institution: "Middlesex College",
     degree: "Dual Enrollment, Accounting and Mathematics",
     period: "Sep 2022 - Aug 2024",
+    location: "Edison, NJ",
+    gpa: "4.0/4.0",
     description: "I received formal training in financial and managerial accounting alongside advanced calculus and linear algebra, supporting my data-driven decision-making and quantitative analysis for finance and technology applications.",
     courses: [
       { code: "ACC 10100", name: "College Accounting I: Financial Accounting" },
@@ -88,7 +93,7 @@ export const education: EducationItem[] = [
       { code: "MAT 23300", name: "Calculus III & Analytic Geometry" },
       { code: "MAT 21000", name: "Linear Algebra" }
     ],
-    logo: "/middlesex-logo.png"
+    logo: "/middlesex_county_college_logo.jpg"
   }
 ]
 
