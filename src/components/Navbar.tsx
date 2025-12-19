@@ -45,7 +45,8 @@ const Navbar = (_props: NavbarProps) => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) // navLinks is a constant array, safe to omit from dependencies
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
