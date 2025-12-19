@@ -31,7 +31,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="section-title"
           >
-            Who I Am
+            Who is Om?
           </motion.h2>
         </div>
 

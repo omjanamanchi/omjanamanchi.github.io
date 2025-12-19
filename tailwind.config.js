@@ -23,9 +23,9 @@ export default {
           blue: '#1F6FEB',
         },
         text: {
-          primary: '#F0F6FC',
-          secondary: '#8B949E',
-          tertiary: '#6E7681',
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          tertiary: 'var(--text-tertiary)',
         },
         border: {
           subtle: 'rgba(240, 246, 252, 0.08)',
@@ -34,9 +34,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        mono: ['SF Mono', 'Monaco', 'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {
         'display-2xl': '4.5rem',

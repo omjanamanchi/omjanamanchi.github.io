@@ -98,14 +98,14 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
       )}
 
       {exp.links && exp.links.length > 0 && (
-        <div className="flex flex-wrap gap-3 mt-4">
+        <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-slate-700">
           {exp.links.map((link) => (
             <a
               key={link.label}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-primary text-text-primary rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-glow-cyan"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
             >
               {link.label}
               <ExternalLink className="w-4 h-4" />

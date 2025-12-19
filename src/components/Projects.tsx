@@ -99,9 +99,9 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-5 py-2.5 bg-bg-elevated hover:bg-bg-surface text-accent-cyan hover:text-accent-purple rounded-lg text-base font-medium transition-all duration-300 border border-border-default hover:border-accent-cyan"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
                   >
-                    <Github className="w-5 h-5" />
+                    <Github className="w-4 h-4" />
                     GitHub
                   </a>
                 )}
@@ -110,9 +110,9 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-5 py-2.5 bg-gradient-primary text-text-primary rounded-lg text-base font-medium transition-all duration-300 hover:shadow-glow-cyan"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink className="w-4 h-4" />
                     Live
                   </a>
                 )}
@@ -124,9 +124,9 @@ const Projects = () => {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 bg-gradient-primary text-text-primary rounded-lg text-base font-medium transition-all duration-300 hover:shadow-glow-cyan"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
                       >
-                        <ExternalLink className="w-5 h-5" />
+                        <ExternalLink className="w-4 h-4" />
                         {link.label}
                       </a>
                     ))}

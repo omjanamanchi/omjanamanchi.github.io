@@ -49,7 +49,7 @@ const Skills = () => {
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={isInView ? { opacity: 1, scale: 1 } : {}}
                           transition={{ duration: 0.3, delay: pairIndex * 0.1 + skillIndex * 0.05 }}
-                          className="px-4 py-2.5 bg-amber-100 dark:bg-amber-900/30 text-slate-800 dark:text-amber-100 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105"
+                          className="px-4 py-2.5 bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-100 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105"
                         >
                           {skill}
                         </motion.span>
@@ -76,7 +76,7 @@ const Skills = () => {
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={isInView ? { opacity: 1, scale: 1 } : {}}
                           transition={{ duration: 0.3, delay: pairIndex * 0.1 + skillIndex * 0.05 }}
-                          className="px-4 py-2.5 bg-amber-100 dark:bg-amber-900/30 text-slate-800 dark:text-amber-100 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105"
+                          className="px-4 py-2.5 bg-amber-100 dark:bg-amber-900/30 text-amber-900 dark:text-amber-100 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105"
                         >
                           {skill}
                         </motion.span>
