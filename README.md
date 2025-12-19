@@ -80,6 +80,8 @@ src/
 
 The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
 
+**Note**: Make sure GitHub Pages is configured to use "GitHub Actions" as the source in your repository settings (Settings → Pages → Source: GitHub Actions).
+
 ### Manual Deployment
 
 1. Build the project:
