@@ -100,16 +100,16 @@ const Research = () => {
               {/* Skills */}
               {item.skills && item.skills.length > 0 && (
                 <div className="mb-4">
-                  <p className="text-sm font-semibold text-text-primary mb-2">
+                  <p className="text-sm font-semibold text-accent-cyan mb-3">
                     Skills:
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {item.skills.map((skill, idx) => (
+                    {item.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="text-sm text-text-primary"
+                        className="badge"
                       >
-                        {skill}{idx < (item.skills?.length ?? 0) - 1 && ' · '}
+                        {skill}
                       </span>
                     ))}
                   </div>

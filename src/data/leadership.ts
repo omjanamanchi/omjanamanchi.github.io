@@ -20,10 +20,10 @@ export const leadership: LeadershipItem[] = [
     location: "Indianapolis, IN",
     employmentType: "Full-time",
     description: [
-      "Leading technical community of 120+ members, organizing hands-on workshops, hackathons, and industry partnerships to bridge academia and professional software engineering",
-      "Hack Indy 2026 Founder & Director: Launched university's flagship hackathon with 200+ participants, securing sponsorships from 15+ industry leaders including Jane Street, Eli Lilly, and Susquehanna International Group (SIG)",
-      "Industry Partnerships: Collaborated with corporate and academic partners to host engineering panels and technical workshops on AI/ML, software architecture, and data engineering, connecting students with hands-on exposure to emerging technologies",
-      "Community Growth: Directed operations and member engagement across technical events (AI workshops, coding competitions, system design sessions) and social initiatives, strengthening campus CS ecosystem"
+      "Leading events for 300+ active student members and managing $10K in annual funding, planning and executing 8+ events per semester including fully sponsored hackathons, hands-on technical workshops, and professional networking panels to foster collaboration between students and Indianapolis tech professionals",
+      "Representing Computer Science Club in university-wide leadership councils and cross-organizational meetings, negotiating sponsorships and partnerships with tech companies to secure funding, mentorship opportunities, and software resources for club initiatives",
+      "Advocating for student interests by collaborating with Purdue University's Department of Computer Science to improve access to technical resources, funding, and career events while organizing engineering panels and technical workshops on AI/ML, software architecture, and data engineering",
+      "Hack Indy 2026 Founder & Director: Launched university's flagship hackathon with 200+ participants, securing sponsorships from 15+ industry leaders including Jane Street, Eli Lilly, and Susquehanna International Group (SIG)"
     ],
     previousRoles: ["Vice President, Jan 2025 - May 2025", "Technical Lead, Sep 2024 - May 2025"],
     skills: ["Hackathon Organization", "Public Speaking", "JavaScript", "Strategic Partnerships", "Event Management", "TypeScript", "Community Building", "Software Development", "Leadership", "Technical Workshops", "AI/ML", "Software Engineering", "Partnership Development", "Corporate Sponsorships", "System Design", "Data Engineering"],
@@ -48,7 +48,8 @@ export const leadership: LeadershipItem[] = [
     skills: ["Algorithmic Trading", "Python (Programming Language)", "Quantitative Finance", "Options Pricing", "CUDA", "TypeScript", "Financial Mathematics", "C++", "GPU Programming", "GPU Computing", "Statistical Arbitrage", "Machine Learning", "API Integration", "Portfolio Optimization", "Risk Analytics", "Real-time Market Data", "Quantitative Research", "Trading Systems", "Python Bindings", "Production-grade Systems"],
     links: [
       { label: "FinMath", url: "https://github.com/Boiler-Quant/finmath" },
-      { label: "Crypto Arbitrage", url: "https://github.com/arnav-42/crypto" }
+      { label: "Crypto Arbitrage", url: "https://github.com/arnav-42/crypto" },
+      { label: "GPU Acceleration", url: "https://github.com/Boiler-Quant/linear_regression_cuda_fa25" }
     ],
     logo: "/boilerquant_logo.jpg"
   },

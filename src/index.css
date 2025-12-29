@@ -309,20 +309,20 @@
   .badge {
     display: inline-flex;
     align-items: center;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
     font-size: var(--text-xs);
     font-weight: var(--font-medium);
-    background: rgba(88, 166, 255, 0.15);
+    background: rgba(88, 166, 255, 0.06);
     color: var(--accent-cyan);
-    border: 1px solid rgba(88, 166, 255, 0.3);
+    border: 1px solid rgba(88, 166, 255, 0.2);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: background-color, border-color, transform;
   }
 
   .badge:hover {
-    background: rgba(88, 166, 255, 0.25);
-    border-color: var(--accent-cyan);
+    background: rgba(88, 166, 255, 0.12);
+    border-color: rgba(88, 166, 255, 0.4);
     transform: translateY(-1px);
   }
 

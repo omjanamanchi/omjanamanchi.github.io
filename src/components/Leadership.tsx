@@ -91,16 +91,16 @@ const LeadershipCard = ({ item, index }: LeadershipCardProps) => {
 
       {item.skills && item.skills.length > 0 && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-text-primary mb-2">
+          <p className="text-sm font-semibold text-accent-cyan mb-3">
             Skills:
           </p>
           <div className="flex flex-wrap gap-2">
-            {item.skills.map((skill, idx) => (
+            {item.skills.map((skill) => (
               <span
                 key={skill}
-                className="text-sm text-text-primary"
+                className="badge"
               >
-                {skill}{idx < item.skills.length - 1 && ' · '}
+                {skill}
               </span>
             ))}
           </div>
@@ -108,7 +108,7 @@ const LeadershipCard = ({ item, index }: LeadershipCardProps) => {
       )}
 
       {item.links && item.links.length > 0 && (
-        <div className="flex flex-wrap gap-3 mt-4">
+        <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-slate-700">
           {item.links.map((link) => (
             <a
               key={link.label}

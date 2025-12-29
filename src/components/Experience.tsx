@@ -81,7 +81,7 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
 
       {exp.skills && exp.skills.length > 0 && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-text-primary mb-2">
+          <p className="text-sm font-semibold text-accent-cyan mb-3">
             Skills:
           </p>
           <div className="flex flex-wrap gap-2">
@@ -98,7 +98,7 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
       )}
 
       {exp.links && exp.links.length > 0 && (
-        <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-slate-700">
+        <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-border-default">
           {exp.links.map((link) => (
             <a
               key={link.label}
